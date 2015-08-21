@@ -20,4 +20,4 @@ You need to pull down many results from a backend, but it limits the amount of r
   - https://github.com/timhudson/continue-stream
   - https://github.com/timhudson/pagination-stream
 
-#### [Have a question?](https://github.com/stephenplusplus/stream-faqs)
+#### [Have a question?](https://github.com/stephenplusplus/stream-faqs/issues/new)
