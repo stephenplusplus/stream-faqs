@@ -13,6 +13,8 @@ When you get stuck, keep in mind:
 
 *If you find any of this information to be inaccurate or incomplete, feel free to contribute a PR!*
 
+--
+
 <a name="paginate"></a>
 #### How can I make a paginated API request?
 
@@ -25,6 +27,8 @@ You need to pull down many results from a backend, but it limits the amount of r
   - https://github.com/timhudson/continue-stream
   - https://github.com/timhudson/pagination-stream
 
+--
+
 <a name="destroy"></a>
 #### How can I destroy all of the streams in a pipeline if one gets an error?
 
@@ -36,6 +40,8 @@ You have a bunch of streams piped together and one gets an error. The other stre
   - https://github.com/mafintosh/pump
   - https://github.com/mafintosh/pumpify
 
+--
+
 <a name="concat"></a>
 #### How can I just get all of the results when they're done coming in?
 
@@ -46,6 +52,8 @@ You have a source readable stream but don't really want to do anything stream-y 
 **Solution**
   - https://github.com/maxogden/concat-stream
 
+--
+
 <a name="duplexify"></a>
 #### How can I asynchronously assign a stream after one has already been created?
 
@@ -55,6 +63,8 @@ You want to make an API request but have to fetch an access token first. If you 
 
 **Solution**
   - https://github.com/mafintosh/duplexify
+
+--
 
 <a name="events"></a>
 #### How do I know when a stream is first written to or read from?
