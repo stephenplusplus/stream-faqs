@@ -42,3 +42,12 @@ You have a source readable stream but don't really want to do anything stream-y 
 
 **Solution**
   - https://github.com/maxogden/concat-stream
+
+#### How can I asynchronously assign a stream after one has already been created?
+
+**Problem**
+
+You want to make an API request but have to fetch an access token first. If you just call `request(/*...*/)`, you will inevitably get a 401 error, so how do you get a stream, but only have it "start" *after* you fetch an access token?
+
+**Solution**
+  - https://github.com/mafintosh/duplexify
