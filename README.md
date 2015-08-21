@@ -9,6 +9,10 @@ When you get stuck, keep in mind:
   - Your use case can probably be "re-thought of" and applied to an existing solution for a similar problem
   - You can come here to ask for help, and I'll try my best to answer or get one
 
+#### [Have a question?](https://github.com/stephenplusplus/stream-faqs/issues/new)
+
+*If you find any of this information to be inaccurate or incomplete, feel free to contribute a PR!*
+
 #### How can I make a paginated API request?
 
 **Problem**
@@ -20,4 +24,12 @@ You need to pull down many results from a backend, but it limits the amount of r
   - https://github.com/timhudson/continue-stream
   - https://github.com/timhudson/pagination-stream
 
-#### [Have a question?](https://github.com/stephenplusplus/stream-faqs/issues/new)
+#### How can I destroy all of the streams in a pipeline if one gets an error?
+
+**Problem**
+
+You have a bunch of streams piped together and one gets an error. The other streams and any listeners on them don't really know what happened and linger around without being properly destroyed.
+
+**Solutions**
+  - https://github.com/mafintosh/pump
+  - https://github.com/mafintosh/pumpify
