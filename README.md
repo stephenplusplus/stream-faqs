@@ -92,10 +92,9 @@ Sometimes, you won't even know what kind of stream you have. Libraries may give 
 
 **Solution**
   - `abort()` - This is a method called on request streams ([`http.request`](https://nodejs.org/api/http.html#http_http_request_options_callback), [`request`](http://gitnpm.com/request)) that aborts the request.
-  - `close` event - Not always present. Readable streams emit this when the underlying resource is closed. Ex: a socket or a file that was "opened" to be read from.
-  - `complete` - This is a custom event from [`request`](http://gitnpm.com/request) to indicate the request is completed.
+  - `.on('close')` event - Not always present. Readable streams emit this when the underlying resource is closed. Ex: a socket or a file that was "opened" to be read from.
+  - `.on('complete')` - This is a custom event from [`request`](http://gitnpm.com/request) to indicate the request is completed.
   - `destroy([err])` - Destroy can be called on most new, non-core streams as a less-patient version of calling `end()`. The stream will be "destroyed" without a care to any data that hasn't been processed yet. Usually, an error can be given that will be emitted to the error event for the stream.
-  - `destroy` event - Going along with the `destroy()` method, this is the event that will trigger only when the stream was destroyed (not ended normally or `end()`-ed explicitly).
   - `end()` - This is a method that can be called on all streams that are writable to gracefully end the stream. Any remaining data that hasn't been written yet will be allowed to be drained. For readable streams, doing `readStream.push(null)` will end the stream and emit the `end` event.
-  - `end` event - All readable streams emit "end" when all of the data is read from. This in turn calls the `end()` method on its destination stream, letting it know "what you have left to write is all you have to worry about, buddy".
-  - `finish` - All streams that are writable emit "finish" when all of the data has been written to their destination.
+  - `.on('end')` - All readable streams emit "end" when all of the data is read from. This in turn calls the `end()` method on its destination stream, letting it know "what you have left to write is all you have to worry about, buddy".
+  - `.on('finish')` - All streams that are writable emit "finish" when all of the data has been written to their destination.
