@@ -33,3 +33,12 @@ You have a bunch of streams piped together and one gets an error. The other stre
 **Solutions**
   - https://github.com/mafintosh/pump
   - https://github.com/mafintosh/pumpify
+
+#### How can I just get all of the results when they're done coming in?
+
+**Problem**
+
+You have a source readable stream but don't really want to do anything stream-y with it. Registering `.on('data')` events is a lot of boilerplate to combine the results as they come in.
+
+**Solution**
+  - https://github.com/maxogden/concat-stream
