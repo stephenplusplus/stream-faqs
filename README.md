@@ -23,7 +23,7 @@ When you get stuck, keep in mind:
 You need to pull down many results from a backend, but it limits the amount of responses you receive at a given time. You get some type of token to include with a follow up request to cursor through the results. How do you combine all of those results into one stream?
 
 **Solutions**
-  - **[ex-paginate/index.js](https://github.com/stephenplusplus/stream-faqs/ex-paginate)**
+  - **[See an example](https://github.com/stephenplusplus/stream-faqs/tree/master/ex-paginate)**
   - https://github.com/feross/multistream
   - https://github.com/timhudson/continue-stream
   - https://github.com/timhudson/pagination-stream
