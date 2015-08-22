@@ -1,0 +1,25 @@
+{
+  "name": "stream-faqs",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Let's learn these things together",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stephenplusplus/stream-faqs.git"
+  },
+  "keywords": [],
+  "author": "Stephen Sawchuk <sawchuk@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stephenplusplus/stream-faqs/issues"
+  },
+  "homepage": "https://github.com/stephenplusplus/stream-faqs#readme",
+  "dependencies": {
+    "chance": "^0.7.6",
+    "express": "^4.13.3"
+  }
+}
