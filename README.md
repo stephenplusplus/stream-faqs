@@ -9,7 +9,15 @@ When you get stuck, keep in mind:
   - Your use case can probably be "re-thought of" and applied to an existing solution for a similar problem
   - You can come here to ask for help, and I'll try my best to answer or get one
 
-#### [Have a question?](https://github.com/stephenplusplus/stream-faqs/issues/new)
+## Questions
+
+  - [How can I make a paginated API request?](#paginate)
+  - [How can I destroy all of the streams in a pipeline if one gets an error?](#destroy)
+  - [How can I just get all of the results when they're done coming in?](#concat)
+  - [How can I asynchronously assign a stream after one has already been created?](#duplexify)
+  - [How do I know when a stream is first written to or read from?](#events)
+  - [What's the difference between "abort", "close", "end", "destroy", "finish", and "complete"?](#ends)
+  - [Have a question?](https://github.com/stephenplusplus/stream-faqs/issues/new)
 
 *If you find any of this information to be inaccurate or incomplete, feel free to contribute a PR!*
 
