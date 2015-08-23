@@ -78,6 +78,7 @@ You want to make an API request but have to fetch an access token first. If you 
 Since it's possible for you (or a user of your library) to create a stream, but then never connect it to anything, or not run it for an unknown amount of time, you might want to wait as long as possible to do something async.
 
 **Solution**
+  - **[See an example](https://github.com/stephenplusplus/stream-faqs/tree/master/ex-wait)**
   - https://github.com/stephenplusplus/stream-events
     - Note: works well with the [duplexify problem](#duplexify).
 
