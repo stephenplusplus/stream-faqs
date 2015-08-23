@@ -52,6 +52,7 @@ You have a bunch of streams piped together and one gets an error. The other stre
 You have a source readable stream but don't really want to do anything stream-y with it. Registering `.on('data')` events is a lot of boilerplate to combine the results as they come in.
 
 **Solution**
+  - **[See an example](https://github.com/stephenplusplus/stream-faqs/tree/master/ex-concat)**
   - https://github.com/maxogden/concat-stream
 
 --
