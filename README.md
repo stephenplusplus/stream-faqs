@@ -38,6 +38,7 @@ You need to pull down many results from a backend, but it limits the amount of r
 You have a bunch of streams piped together and one gets an error. The other streams and any listeners on them don't really know what happened and linger around without being properly destroyed.
 
 **Solutions**
+  - **[See an example](https://github.com/stephenplusplus/stream-faqs/tree/master/ex-destroy)**
   - https://github.com/mafintosh/pump
   - https://github.com/mafintosh/pumpify
 

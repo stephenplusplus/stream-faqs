@@ -44,4 +44,8 @@ app.get('/users', function(req, res) {
   }
 });
 
+app.post('/users', function(req, res) {
+  res.end();
+});
+
 app.listen(8100);
