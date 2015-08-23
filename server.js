@@ -3,7 +3,9 @@
 var Chance = require('chance');
 var express = require('express');
 
+var app = express();
 var chance = new Chance();
+
 chance.mixin({
   user: function() {
     return {
@@ -34,7 +36,7 @@ function buildApiResponseWithNextPageToken() {
   return apiResponse;
 }
 
-var app = express();
+var accessToken = 'access-token';
 
 app.get('/users', function(req, res) {
   if (!req.query.nextPageToken) {
@@ -46,6 +48,18 @@ app.get('/users', function(req, res) {
 
 app.post('/users', function(req, res) {
   res.end();
+});
+
+app.get('/token', function(req, res) {
+  res.end(accessToken);
+});
+
+app.get('/admin', function(req, res) {
+  if (req.query.token === accessToken) {
+    res.end('Access granted!');
+  } else {
+    res.sendStatus(401);
+  }
 });
 
 app.listen(8100);

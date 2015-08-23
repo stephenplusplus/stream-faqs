@@ -1,0 +1,14 @@
+{
+  "name": "ex-async-stream",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "Stephen Sawchuk <sawchuk@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "duplexify": "^3.4.2",
+    "request": "^2.61.0"
+  }
+}

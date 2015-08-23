@@ -64,6 +64,7 @@ You have a source readable stream but don't really want to do anything stream-y 
 You want to make an API request but have to fetch an access token first. If you just call `request(/*...*/)`, you will inevitably get a 401 error, so how do you get a stream, but only have it "start" *after* you fetch an access token?
 
 **Solution**
+  - **[See an example](https://github.com/stephenplusplus/stream-faqs/tree/master/ex-async-stream)**
   - https://github.com/mafintosh/duplexify
 
 --
