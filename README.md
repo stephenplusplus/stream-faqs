@@ -117,3 +117,7 @@ Methods        | Description
 abort()        | This is a method called on request streams ([`http.request`](https://nodejs.org/api/http.html#http_http_request_options_callback), [`request`](http://gitnpm.com/request)) that aborts the request.
 destroy([err]) | Destroy can be called on most new, non-core streams as a less-patient version of calling `end()`. The stream will be "destroyed" without a care to any data that hasn't been processed yet. Usually, an error can be given that will be emitted to the error event for the stream.
 end()          | This is a method that can be called on all streams that are writable to gracefully end the stream. Any remaining data that hasn't been written yet will be allowed to be drained. For readable streams, doing `readStream.push(null)` will end the stream and emit the `end` event.
+
+## More Helpful Resources
+
+- [Mississippi](https://github.com/maxogden/mississippi) - See more examples and descriptions of the most popular stream modules (many of the ones mentioned here).
