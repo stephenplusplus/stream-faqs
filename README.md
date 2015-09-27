@@ -1,4 +1,4 @@
-# stream-faqs <a href="https://twitter.com/home?status=FAQs about streams in Node.js - https://github.com/stephenplusplus/stream-faqs"><img src="https://storage.googleapis.com/gitnpm/tweet-button.png" height="20" width="47"></a>
+# stream-faqs
 > Let's learn these things together.
 
 The stream learning curve has been (embarrassingly) difficult for me. But I find that the more I talk about how confused I am, the more I find people are confused, too. I've received some great help along the way, and I want to share what I've found while I continue to learn more.
