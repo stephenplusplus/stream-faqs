@@ -35,6 +35,7 @@ You need to pull down many results from a backend, but it limits the amount of r
   - https://github.com/feross/multistream
   - https://github.com/timhudson/continue-stream
   - https://github.com/timhudson/pagination-stream
+  - https://github.com/karissa/paged-http-stream
 
 --
 
