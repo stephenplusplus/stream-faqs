@@ -1,69 +1,49 @@
 'use strict';
 
 var JSONStream = require('JSONStream');
-var multistream = require('multistream');
-var request = require('request');
+var pagedHttpStream = require('paged-http-stream');
+var through2 = require('through2');
 
-var allResultsFetched = false;
-var nextPageToken;
 var requestOptions = {
   uri: 'http://localhost:8100/users'
 };
 
-function makeRequest(callWithAStream) {
-  if (allResultsFetched) {
+function onResponse(response) {
+  if (!response.nextPageToken) {
     // Nothing left to do.
-    // Let multistream end the readable portion of this pipeline.
-    callWithAStream();
-    return;
+    // Returning null will end the stream.
+    return null;
   }
 
-  if (nextPageToken) {
-    requestOptions.qs = {
-      nextPageToken: nextPageToken
-    };
-    nextPageToken = '';
-  }
-
-  var requestStream = request(requestOptions);
-
-  // This is somewhat annoying...
-  //
   // The response from the API contains the token we need to paginate.
-  // Some APIs may work differently, with perhaps a timestamp. If that's the
-  // case for the API you use, then this kind of solution might not be
-  // necessary.
-  requestStream.on('response', function(response) {
-    response
-      .pipe(JSONStream.parse('nextPageToken'))
-      .on('data', function(_nextPageToken) {
-        nextPageToken = _nextPageToken;
-      })
-      .on('end', function() {
-        if (!nextPageToken) {
-          allResultsFetched = true;
-        }
-      });
-  });
+  // Some APIs may work differently, with perhaps a timestamp.
+  requestOptions.query = {
+    nextPageToken: response.nextPageToken
+  };
 
-  // We have our stream. Tell multistream "run this one now".
-  //
-  // Our script will get this far twice; once without a nextPageToken, and the
-  // next with it.
-  callWithAStream(null, requestStream);
+  return requestOptions;
 }
 
 var expectedUsers = 100;
 var usersReceived = 0;
 
-multistream(makeRequest)
-  .pipe(JSONStream.parse('users.*'))
+pagedHttpStream(requestOptions, onResponse)
+
+  // We only care about the `users` array from the API response.
+  .pipe(through2.obj(function(obj, enc, next) {
+    next(null, obj.users);
+  }))
+
+  // This is a bit of a dance to split apart the 50-item arrays from the
+  // response and emit each individual item as a data event. Tooling might have
+  // already solved this for me, but I haven't found it yet!
+  .pipe(JSONStream.stringify())
+  .pipe(JSONStream.parse('*.*'))
+
   .on('data', function() {
     usersReceived++;
   })
-  .pipe(JSONStream.stringify())
   .on('end', function() {
     console.log('Did we get all of the users?');
     console.log(usersReceived === expectedUsers ? 'Yes!' : 'No :(');
-  })
-  .pipe(process.stdout);
+  });

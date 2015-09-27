@@ -8,8 +8,8 @@
   "author": "Stephen Sawchuk <sawchuk@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "JSONStream": "^1.0.4",
-    "multistream": "^2.0.2",
-    "request": "^2.61.0"
+    "JSONStream": "^1.0.6",
+    "paged-http-stream": "^1.0.1",
+    "through2": "^2.0.0"
   }
 }
